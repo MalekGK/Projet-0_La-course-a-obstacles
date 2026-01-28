@@ -1,2 +1,9 @@
 # Piste.py
 # Classe représentant la piste de la course
+
+class Piste:
+    __coureurs = []
+
+    def __init__(self, coureurs, allees):
+        self.__coureurs = coureurs
+        self.allees = allees
