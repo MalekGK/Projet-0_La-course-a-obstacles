@@ -9,5 +9,5 @@ class Coureur:
         self.position = couleur # Couleur du coureur(IDENTIFICATION)
         self.distance_parcourue = distance_parcourue # Distance parcourue en cases
 
-    def avancer(self, vitesse, distance_parcourue):
-        return None
+
+    
