@@ -1,5 +1,6 @@
 # Piste.py
 # Classe représentant la piste de la course
+# Malek
 
 class Piste:
     __coureurs = []

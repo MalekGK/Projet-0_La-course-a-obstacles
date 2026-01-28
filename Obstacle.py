@@ -1,5 +1,6 @@
 # Obstacle.py
 # Classe représentant un obstacle dans la course
+<<<<<<< HEAD
 # 3 types d'obstacles pour 3 temps d'arret different
 
 class Obstacle:
@@ -10,3 +11,6 @@ class Obstacle:
 
 
     
+=======
+# Philip
+>>>>>>> 5bcf5af22fef606396b446e2ed5fc7acb178fb19
