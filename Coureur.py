@@ -1,9 +1,13 @@
 # Coureur.py
 # Classe représentant un coureur dans la course
 # Malek
+import random
 
 class Coureur:
-    def __init__(self, id, position, couleur, vitesse = 1, distance_parcourue = 0):
+    VITESSE_MIN = 1
+    VITESSE_MAX = 5
+
+    def __init__(self, id: int, position: int, couleur: str, vitesse = 1, distance_parcourue = 0):
         self.id = id # Id du joueur
         self.position = position # Position dans la course
         self.couleur = couleur # Couleur du coureur(IDENTIFICATION)
@@ -16,5 +20,6 @@ class Coureur:
     def avancer(self, vitesse):
         return None
     
-    def modifierVitesse(self):
-        return None
+    # Modifie la vitesse du coureur(Secondes que le coureur prend pour passer d'une case de la piste à l'autre)
+    def modifier_vitesse() -> int:
+        return random.randint(Coureur.VITESSE_MIN, Coureur.VITESSE_MAX)
