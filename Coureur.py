@@ -6,6 +6,7 @@ import random
 class Coureur:
     VITESSE_MIN = 1
     VITESSE_MAX = 5
+    #Philip: Joueur devra avoir temps total.Je dirai pas de distance parcouru mais en combien de temps car c'est la meme piste
 
     def __init__(self, id: int, position: int, couleur: str, vitesse = 1, distance_parcourue = 0):
         self.id = id # Id du joueur
