@@ -4,7 +4,8 @@
 
 import random
 import Obstacle
-import JumpPad
+import Trempoline
+import Teleporteur
 
 class Piste:
 
@@ -24,8 +25,10 @@ class Piste:
 
                 r = random.randint(0 , 99)
 
-                if r < 10:
-                    cases.append(JumpPad(5))  # 10% jump pad 5=nb de cases sautes
+                if r < 3:
+                    cases.append(Teleporteur())
+                elif r < 10:
+                    cases.append(Trempoline(5))  # 10% jump pad 5=nb de cases sautes
                 elif r < 40:
                     cases.append(Obstacle("nager"))
                 elif r < 70:

@@ -2,7 +2,7 @@ import threading
 import Piste
 import Coureur
 import Obstacle
-import JumpPad
+import Trempoline
 
 # Main.py
 # Classe qui sert à exécuter le programme principal
@@ -24,7 +24,7 @@ while self.position < self.piste.longueur:
     if case is None:
         self.position += 1
 
-    elif isinstance(case, JumpPad): # verifie si la case est de type de jump pad
+    elif isinstance(case, Trempoline): # verifie si la case est de type de jump pad
         self.messagerie.envoyer(f"{self.nom} trouve un JumpPad (+5 cases)")
 
         nouvelle_position = self.position + 5
