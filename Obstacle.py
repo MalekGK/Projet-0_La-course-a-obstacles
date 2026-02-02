@@ -2,6 +2,10 @@
 # Classe représentant un obstacle dans la course
 # 3 types d'obstacles pour 3 temps d'arret different
 #Philip
+
+import random
+import time
+
 class Obstacle:
 
     def __init__(self, type_obstacle):
