@@ -1,4 +1,8 @@
-import threading;
+import threading
+import Piste
+import Coureur
+import Obstacle
+import JumpPad
 
 # Main.py
 # Classe qui sert à exécuter le programme principal
