@@ -5,13 +5,13 @@ import random
 
 class Coureur:
     VITESSE_MIN = 1
-    VITESSE_MAX = 5
+    VITESSE_MAX = 3
 
     def __init__(self, id: int, position: int, couleur: str, vitesse = 1, distance_parcourue = 0):
         self.id = id # Id du joueur
         self.position = position # Position dans la course
         self.couleur = couleur # Couleur du coureur(IDENTIFICATION)
-        self.vitesse = vitesse  # Vitesse en secondes par cases
+        self.vitesse = vitesse  # Vitesse en secondes par case
         self.distance_parcourue = distance_parcourue # Distance parcourue en cases
 
 
