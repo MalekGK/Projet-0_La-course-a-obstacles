@@ -5,7 +5,6 @@ Classe gérant les messages d'information de chaque coureur dans la course,
 afin de suivre leur progression et les événements importants.
 '''
 
-<<<<<<< HEAD
 class Messagerie:
 
     def __init__(self):
@@ -27,6 +26,3 @@ class Messagerie:
 
 
     
-=======
-class Messagerie:
->>>>>>> c3b4d6ecf44ce150272a9741edd0dcfe52317411

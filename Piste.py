@@ -7,18 +7,11 @@ import Obstacle
 import JumpPad
 
 class Piste:
-    #Philip: Piste sera un singleton car on veut pas en creer plusieurs
 
-    _instance = None # pour verifier si un obj a ete instancier
-
-    def __init__(cls, longueur=60, chance_case_obstacle=0.33):
-        if (cls._instance is None):
-            instance = super().__new__(cls) #SI l'objet n'a pas ete instancer ca le creer 
-            instance.longueur = longueur
-            instance.chance_case_obstacle = chance_case_obstacle
-            instance.cases = instance._generer_cases()
-            cls._instance = instance
-        return cls._instance
+    def __init__(self, longueur=60, chance_case_obstacle=0.33):
+            self.longueur = longueur
+            self.chance_case_obstacle = chance_case_obstacle
+            self.cases = instance._generer_cases()
 
 
     def _generer_cases(self):

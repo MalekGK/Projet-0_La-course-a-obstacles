@@ -27,7 +27,7 @@ class Obstacle:
     def appliquer(self, coueur, messagerie, index_case):
         if random.random() < self.chance: #determine si le joueur a reussi ou echoue son obstacle
             messagerie.envoyer(
-                f"{coueur.nom} échoue l'obstacle '{self.type}' à la case {index_case} (+{self.penalite:.1f}s)"
+                f"{coueur.nom} échoue l'obstacle '{self.type}' à la case {index_case} (+{self.penalite}s)"
             )
             time.sleep(self.penalite)
             coueur.temps_total += self.penalite
