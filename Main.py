@@ -40,3 +40,4 @@ while self.position < self.piste.longueur:
         self.position += 1
 
 
+# Coureur bleu = Coureur
