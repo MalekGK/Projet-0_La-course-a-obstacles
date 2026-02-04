@@ -1,8 +1,12 @@
+import Messagerie
 
+import random
+
+import Piste
 
 class Teleporteur:
 
-   def appliquer_T(ref,nom, messagerie , position , piste ):
+   def appliquer_T(ref, nom:str, messagerie:Messagerie, position:int , piste:Piste ):
 
         rand = random.randint(piste.longueur/2 , piste.longueur)
 

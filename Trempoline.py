@@ -3,6 +3,7 @@ import Piste
 import Coureur
 import Obstacle
 import Trempoline
+import Messagerie
 
 #Je vais ajouter une classe qui va permettre de sauter de cases qui vont etre generer sur la piste
 #Philip
@@ -12,7 +13,7 @@ class Trempoline:
     def __init__(self, saut):
         self.saut = saut
 
-    def appliquer_JP(ref,nom, messagerie , position , piste ):
+    def appliquer_JP(ref,nom:str, messagerie:Messagerie, position:int , piste ):
 
            nouvelle_position = position + Trempoline.saut
 
