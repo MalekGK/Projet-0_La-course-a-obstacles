@@ -57,25 +57,8 @@ class Main:
 
         for fil in fils:
             fil.join()
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
 # self.position = 0
 
 # while self.position < self.piste.longueur:
