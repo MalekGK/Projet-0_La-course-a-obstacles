@@ -1,8 +1,10 @@
 import threading
-import Piste
-import Coureur
-import Obstacle
-import Trempoline
+import time
+from Piste import Piste
+from Coureur import Coureur
+from Obstacle import Obstacle
+from Trampoline import Trampoline
+from Messagerie import Messagerie
 
 # Main.py
 # Classe qui sert à exécuter le programme principal
@@ -14,30 +16,90 @@ import Trempoline
 # Classe obstacle determine le resultat
 # Fini avec le dernier thread qui fini
 
-self.position = 0
+class Main:
+    def __init__(self, argument = None):
+        self.argument = argument
 
-while self.position < self.piste.longueur:
-    case = self.piste.cases[self.position]
+    def decompte(secondes: int):
+        for i in range(secondes):
+            print(f"...{secondes - i}")
+            time.sleep(1)
+        print("\nPartez!")
 
-    self.messagerie.envoyer(f"{self.nom} est à la case {self.position}")
+    def demarrer(self):
+        piste = Piste()
+        messagerie = Messagerie()
 
-    if case is None:
-        self.position += 1
+        coureurs = [
+            Coureur("Rouge"),
+            Coureur("Bleu"),
+            Coureur("Jaune")
+        ]
+        resultats = []
+        fils = []
 
-    elif isinstance(case, Trempoline): # verifie si la case est de type de jump pad
-        self.messagerie.envoyer(f"{self.nom} trouve un JumpPad (+5 cases)")
+        demarrer_evenement = threading.Event()
+        barrer = threading.Lock()
 
-        nouvelle_position = self.position + 5
+        for coureur in coureurs:
+            fil = threading.Thread(
+                target=self.fil_coureur,
+                args=(coureur, messagerie, resultats, demarrer_evenement, barrer)
+            )
 
-        if nouvelle_position >= self.piste.longueur:
-            self.position = self.piste.longueur
-        else:
-            self.position = nouvelle_position
+            fils.Append(fil)
+            fil.start
+
+        print("********** BIENVENUE À LA COURSE À OBSTACLES **********")
+        commencer = input("\nÊtes-vous prêt?(Appuyer sur entrer pour continuer...)")
+        Main.decompte(3)
+        demarrer_evenement.set()
+
+        for fil in fils:
+            fil.join()
+        
 
 
-    elif isinstance(case, Obstacle):
-        case.appliquer(self, self.messagerie, self.position)  #Passe une position et l'objet messagerie
-        self.position += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# self.position = 0
+
+# while self.position < self.piste.longueur:
+#     case = self.piste.cases[self.position]
+
+#     self.messagerie.envoyer(f"{self.nom} est à la case {self.position}")
+
+#     if case is None:
+#         self.position += 1
+
+#     elif isinstance(case, Trempoline): # verifie si la case est de type de jump pad
+#         self.messagerie.envoyer(f"{self.nom} trouve un JumpPad (+5 cases)")
+
+#         nouvelle_position = self.position + 5
+
+#         if nouvelle_position >= self.piste.longueur:
+#             self.position = self.piste.longueur
+#         else:
+#             self.position = nouvelle_position
+
+
+#     elif isinstance(case, Obstacle):
+#         case.appliquer(self, self.messagerie, self.position)  #Passe une position et l'objet messagerie
+        # self.position += 1
 
 
 # Coureur bleu = Coureur

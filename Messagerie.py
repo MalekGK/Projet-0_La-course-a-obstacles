@@ -1,5 +1,3 @@
-
-
 # Messagerie.py
 # Malek
 '''

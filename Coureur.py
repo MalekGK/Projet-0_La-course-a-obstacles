@@ -3,22 +3,23 @@
 # Malek
 # TERMINÉ
 
+import uuid
 import random
 import time
-import Piste
+from Piste import Piste
 
 class Coureur:
+    POSITION_DEFAULT = 0
     VITESSE_MIN = 1
     VITESSE_MAX = 3
     #Philip: Joueur devra avoir temps total.Je dirai pas de distance parcouru mais en combien de temps car c'est la meme piste
 
-    def __init__(self, id: int, couleur: str, piste: Piste, position = 0, vitesse = 1):
-        self.id = id # Id du joueur
+    def __init__(self, couleur: str):
+        self.id = str(uuid.uuid4()) # Id du joueur
         self.couleur = couleur # Couleur du coureur(IDENTIFICATION)
-        self.position = position # Position dans la course
-        self.vitesse = vitesse  # Vitesse en secondes par case
-        self.piste = piste # Piste du coureur(de la classe Piste)
-        self.temps_total = None # Temps du coureur du début jusqu'à la fin de la course
+        self.position = Coureur.POSITION_DEFAULT # Position dans la course
+        self.vitesse = Coureur.VITESSE_MIN # Vitesse en secondes par case
+        self.temps_total = 0 # Temps du coureur du début jusqu'à la fin de la course
         # Le temps sera instancier au moment du départ de la course, par time_perf_counter()
 
 

@@ -3,9 +3,9 @@
 # Philip
 
 import random
-import Obstacle
-import Trempoline
-import Teleporteur
+from Obstacle import Obstacle
+from Trampoline import Trampoline
+from Teleporteur import Teleporteur
 
 class Piste:
 
@@ -28,7 +28,7 @@ class Piste:
                 if r < 3:
                     cases.append(Teleporteur())
                 elif r < 10:
-                    cases.append(Trempoline(5))  # 10% jump pad 5=nb de cases sautes
+                    cases.append(Trampoline(5))  # 10% jump pad 5=nb de cases sautes
                 elif r < 40:
                     cases.append(Obstacle("nager"))
                 elif r < 70:

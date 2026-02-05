@@ -2,7 +2,7 @@ import Messagerie
 
 import random
 
-import Piste
+from Piste import Piste
 
 class Teleporteur:
 

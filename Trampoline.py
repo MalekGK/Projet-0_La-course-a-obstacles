@@ -1,21 +1,21 @@
 import threading
-import Piste
-import Coureur
-import Obstacle
-import Trempoline
-import Messagerie
+from Piste import Piste
+from Coureur import Coureur
+from Obstacle import Obstacle
+from Trampoline import Trampoline
+from Messagerie import Messagerie
 
 #Je vais ajouter une classe qui va permettre de sauter de cases qui vont etre generer sur la piste
 #Philip
 
-class Trempoline:
+class Trampoline:
 
     def __init__(self, saut):
         self.saut = saut
 
-    def appliquer_JP(ref,nom:str, messagerie:Messagerie, position:int , piste ):
+    def appliquer_trampoline(self,nom:str, messagerie:Messagerie, position:int , piste ):
 
-           nouvelle_position = position + Trempoline.saut
+           nouvelle_position = position + Trampoline.saut
 
            if nouvelle_position >= piste.longueur:
               
