@@ -5,7 +5,6 @@
 
 import uuid
 import random
-import time
 from Piste import Piste
 
 class Coureur:
