@@ -34,14 +34,14 @@ class Piste:
                 elif r < 70:
                     cases.append(Obstacle("saut"))
                 else:
-                    cases.append(Obstacle("grimper"))
+                    cases.append(Obstacle("grimpe"))
                 #choisi quel obstacle prend cette case
             else:
                 cases.append(None)
                 #ajoute un index vide
         return cases
 
-    def demarrerCourse():
+    def demarrerCourse(self):
         return None
 
 

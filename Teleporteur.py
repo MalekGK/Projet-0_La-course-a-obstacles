@@ -1,17 +1,29 @@
-import Messagerie
-
+import threading
+from Coureur import Coureur
+from Obstacle import Obstacle
+from Trampoline import Trampoline
+from Messagerie import Messagerie
 import random
 
-from Piste import Piste
+#Je vais ajouter une classe qui va permettre de sauter de cases qui vont etre generer sur la piste
+#Philip
+
 
 class Teleporteur:
 
-   def appliquer_T(ref, nom:str, messagerie:Messagerie, position:int , piste:Piste ):
+    def appliquer_T(ref, nom: str, messagerie: Messagerie, position: int, piste: Piste):
+        min_position = int(piste.longueur / 2)
+        max_position = piste.longueur - 1
 
-        rand = random.randint(piste.longueur/2 , piste.longueur)
+        nouvelle_position = random.randint(min_position, max_position)
 
-        nouvelle_position = rand
-
-        messagerie.envoyer(f"{nom} s'est teleporte de la case {position} a la case{nouvelle_position}")
+        messagerie.envoyer(
+            nom + " s'est téléporté de la case " +
+            str(position) + " à la case " +
+            str(nouvelle_position)
+        )
 
         return nouvelle_position
+
+        
+

@@ -17,18 +17,23 @@ class Coureur:
         self.id = str(uuid.uuid4()) # Id du joueur
         self.couleur = couleur # Couleur du coureur(IDENTIFICATION)
         self.position = Coureur.POSITION_DEFAULT # Position dans la course
-        self.vitesse = Coureur.VITESSE_MIN # Vitesse en secondes par case
         self.temps_total = 0 # Temps du coureur du début jusqu'à la fin de la course
+        self.vitesse = 0
         # Le temps sera instancier au moment du départ de la course, par time_perf_counter()
 
 
     
     # Méthode qui retourne le nombre de secondes que prend un coureur à changer de case
-    def avancer(self, vitesse) -> int:
-        vitesse = Coureur.modifier_vitesse()
-
-        return vitesse
+    def avancer(self):
+        self.modifier_vitesse()
+        self.position = self.position + 1
+        self.temps_total = self.temps_total + self.vitesse
+        return self.vitesse
     
     # Modifie la vitesse du coureur(Secondes que le coureur prend pour passer d'une case de la piste à l'autre)
-    def modifier_vitesse() -> int:
-        return random.randint(Coureur.VITESSE_MIN, Coureur.VITESSE_MAX)
+    def modifier_vitesse(self):
+        self.vitesse = random.randint
+        (
+            Coureur.VITESSE_MIN,
+            Coureur.VITESSE_MAX
+        )

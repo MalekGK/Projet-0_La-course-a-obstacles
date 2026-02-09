@@ -1,41 +1,43 @@
-# Obstacle.py
-# Classe représentant un obstacle dans la course
-# 3 types d'obstacles pour 3 temps d'arret different
-#Philip
-
 import random
 import time
 
 class Obstacle:
 
     def __init__(self, type_obstacle):
-       self.type == type_obstacle
+        self.type = type_obstacle
 
-       if( self.type == "saut"):
-           self.difficulte = 1
-           self.chance = 0.30
-           self.penalite = 0.8
-       if( self.type == "grimpe"):
-           self.difficulte = 2
-           self.chance = 0.50
-           self.penalite = 1
-       if( self.type == "nager"):
-           self.difficulte = 3
-           self.chance = 0.80
-           self.penalite = 1.5
-    
+        if self.type == "saut":
+            self.chance = 0.30
+            self.penalite = 0.8
+
+        elif self.type == "grimpe":
+            self.chance = 0.50
+            self.penalite = 1.0
+
+        elif self.type == "nager":
+            self.chance = 0.80
+            self.penalite = 1.5
+
+        else:
+            self.chance = 0.0
+            self.penalite = 0.0
+
+
     def appliquer(self, coureur, messagerie, position):
-        if random.random() < self.chance: #determine si le joueur a reussi ou echoue son obstacle
+
+        if random.random() < self.chance:
+
             messagerie.envoyer(
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite:.1f}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
+                coureur.couleur + " échoue l'obstacle '" +
+                self.type + "' à la case " + str(position) +
+                " (+" + str(self.penalite) + "s)"
             )
+
             time.sleep(self.penalite)
-            coureur.temps_total += self.penalite
+            coureur.temps_total = coureur.temps_total + self.penalite
+
         else:
             messagerie.envoyer(
-                f"{coureur.nom} réussit l'obstacle '{self.type}' à la case {position}"
+                coureur.couleur + " réussit l'obstacle '" +
+                self.type + "' à la case " + str(position)
             )
-    #Philip: methode qui va envoyer un message qui va contenir l'etat du joueur + cmb de temps de penalite + la case ou il est
