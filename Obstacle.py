@@ -9,13 +9,13 @@ import time
 class Obstacle:
 
     def __init__(self, type_obstacle):
-       self.type == type_obstacle
+       self.type = type_obstacle
 
        if( self.type == "saut"):
            self.difficulte = 1
            self.chance = 0.30
            self.penalite = 0.8
-       if( self.type == "grimpe"):
+       if( self.type == "grimper"):
            self.difficulte = 2
            self.chance = 0.50
            self.penalite = 1
@@ -27,15 +27,11 @@ class Obstacle:
     def appliquer(self, coureur, messagerie, position):
         if random.random() < self.chance: #determine si le joueur a reussi ou echoue son obstacle
             messagerie.envoyer(
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite:.1f}s)"
-                f"{coureur.nom} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite}s)"
+                f"{coureur.couleur} échoue l'obstacle '{self.type}' à la case {position} (+{self.penalite:.1f}s)"
             )
             time.sleep(self.penalite)
-            coureur.temps_total += self.penalite
         else:
             messagerie.envoyer(
-                f"{coureur.nom} réussit l'obstacle '{self.type}' à la case {position}"
+                f"{coureur.couleur} réussit l'obstacle '{self.type}' à la case {position}"
             )
     #Philip: methode qui va envoyer un message qui va contenir l'etat du joueur + cmb de temps de penalite + la case ou il est

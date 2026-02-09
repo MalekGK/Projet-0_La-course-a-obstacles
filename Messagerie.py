@@ -9,16 +9,15 @@ import threading
 
 class Messagerie:
     def __init__(self):
-        self._lock = threading.Lock()
+        self.lock = threading.Lock()
         self.messages = []
 
     def envoyer(self, message):
-        with self._lock:
+        with self.lock:
             self.messages.append(message)
-            print(message)
 
     def afficher_archive(self):
-        with self._lock:
+        with self.lock:
             for msg in self.messages:
                 print(msg)
 
