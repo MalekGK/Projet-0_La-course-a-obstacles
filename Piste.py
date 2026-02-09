@@ -9,7 +9,7 @@ from Teleporteur import Teleporteur
 
 class Piste:
 
-    def __init__(self, longueur=60, chance_case_obstacle=0.33):
+    def __init__(self, longueur = 30, chance_case_obstacle = 0.33):
             self.longueur = longueur
             self.chance_case_obstacle = chance_case_obstacle
             self.cases = self._generer_cases()
